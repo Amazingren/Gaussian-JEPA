@@ -55,7 +55,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def set_paper_style() -> None:
-    """Use a compact Times-compatible style for AAAI single-column figures."""
+    """Use a compact Times-compatible style for single-column paper figures."""
     plt.rcParams.update(
         {
             "font.family": "serif",
