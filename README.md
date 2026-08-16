@@ -41,7 +41,7 @@
 </div>
 
 <p align="center">
-  <img src="https://github.com/Amazingren/Gaussian-JEPA/blob/main/assets/gaussian_jepa_teaser.png?raw=true" width="900"
+  <img src="https://raw.githubusercontent.com/Amazingren/Gaussian-JEPA/main/assets/gaussian_jepa_teaser.png" width="900"
        alt="Gaussian-JEPA motivation and learning paradigms">
 </p>
 
@@ -62,7 +62,7 @@ representation diagnostics, shape completion, and part segmentation.
 ## Method
 
 <p align="center">
-  <img src="https://github.com/Amazingren/Gaussian-JEPA/blob/main/assets/gaussian_jepa_framework.png?raw=true" width="900"
+  <img src="https://raw.githubusercontent.com/Amazingren/Gaussian-JEPA/main/assets/gaussian_jepa_framework.png" width="900"
        alt="Gaussian-JEPA framework">
 </p>
 
