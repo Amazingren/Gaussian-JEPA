@@ -4,11 +4,11 @@
 
 Gaussian-JEPA is a self-supervised encoder for object-level 3D Gaussian
 Splatting (3DGS) assets. It learns by predicting latent features of spatially
-held-out Gaussian token blocks from their visible context. The released model
+held-out Gaussian token blocks from their visible context. The reference model
 uses a 12-layer, 384-dimensional transformer and was pretrained for 300 epochs
 on ShapeNet55-GS.
 
-| Item | Released setting |
+| Item | Reference setting |
 |---|---|
 | Checkpoint | `gaussian_jepa_ep300.pth` |
 | Input budget | 1,024 Gaussians |
@@ -24,7 +24,7 @@ The file digest and checkpoint structure are documented in
 
 ## Intended use
 
-The checkpoint is intended for research on object-level Gaussian
+Compatible checkpoints are intended for research on object-level Gaussian
 representations, including:
 
 - frozen-feature analysis and retrieval;
@@ -49,7 +49,7 @@ single-object inference example.
 
 ## Evaluation
 
-The released checkpoint is evaluated on ModelNet10/40-GS classification,
+The reference model is evaluated on ModelNet10/40-GS classification,
 ShapeNet-Part segmentation, Gaussian resampling consistency, partial-to-complete
 retrieval, and Gaussian shape completion. Exact protocols and results are in
 [`docs/results`](docs/results/README.md).
@@ -66,7 +66,7 @@ retrieval, and Gaussian shape completion. Exact protocols and results are in
   data distribution. The model has not been validated for safety-critical or
   production decision systems.
 
-These boundaries describe the validated release rather than prohibiting
+These boundaries describe the validated setting rather than prohibiting
 research extensions to scenes, alternative groupings, or larger input budgets.
 
 ## Reproducibility

@@ -6,7 +6,7 @@ from .Gaussian_JEPA_ExpMultiScale import (
     PointTransformer_JEPA_ExpMultiScale,
 )
 
-# Keep the released checkpoint's internal class names intact while providing
+# Keep legacy checkpoint class names intact while providing
 # concise public names for new configuration files.
 MODELS.register_module(name="GaussianJEPA", module=Gaussian_JEPA_ExpMultiScale)
 MODELS.register_module(

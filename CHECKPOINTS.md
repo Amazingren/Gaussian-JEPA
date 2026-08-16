@@ -1,12 +1,13 @@
-# Released checkpoints
+# Checkpoint format
 
-The [Gaussian-JEPA checkpoint folder](https://drive.google.com/drive/folders/1OEXX2ZWsnoL0h4Bzf2sURBGJeneI-C3N?usp=sharing)
-contains the canonical pretrained model and the principal downstream models.
-No baseline or third-party weights are included.
+Pretrained weights are not included in the current public release. This page
+documents the reference checkpoint layout so that locally supplied weights can
+be used consistently. No baseline or third-party weights are distributed with
+the repository.
 
 ## Pretrained model
 
-The released encoder was pretrained for 300 epochs on ShapeNet55-GS with 1,024
+The reference encoder was pretrained for 300 epochs on ShapeNet55-GS with 1,024
 Gaussians per object.
 
 | File | Pretraining class | Epoch | Size | SHA-256 |
@@ -16,10 +17,10 @@ Gaussians per object.
 The checkpoint stores 377 tensors in `checkpoint["base_model"]`. Online
 encoder parameters use the prefix `JEPA_encoder.`. The concise public registry
 names `GaussianJEPA` and `PointTransformer_GaussianJEPA` are aliases for the
-legacy class names stored by the training code, so the released checkpoint is
+legacy class names stored by the training code, so the reference checkpoint is
 loaded without key conversion.
 
-Verify the downloaded file before use:
+Verify a local copy before use:
 
 ```bash
 sha256sum pretrain/gaussian_jepa_shapenet55gs_1k_ep300.pth
@@ -39,9 +40,7 @@ this checkpoint is supplied.
 
 ## Downstream models
 
-The same folder also provides six ModelNet classifiers, the ShapeNet-Part
-model associated with the reported 84.5 class mIoU / 86.1 instance mIoU, and
-three independently trained ShapeNet55-GS completion decoders. Their filenames
-encode the task, transfer protocol, Gaussian budget, and reported result. Each
-task retains its native training wrapper; use the corresponding configuration
-and evaluation entry point documented in the repository.
+Downstream checkpoints may use the same task-specific wrappers documented for
+ModelNet classification, ShapeNet-Part segmentation, and ShapeNet55-GS
+completion. Their filenames should encode the task, transfer protocol, Gaussian
+budget, and training seed.

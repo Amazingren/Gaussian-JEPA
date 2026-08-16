@@ -23,7 +23,6 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-176B63?logo=googlechrome&logoColor=white)](https://amazingren.github.io/Gaussian-JEPA/)
 [![Code](https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white)](https://github.com/Amazingren/Gaussian-JEPA)
-[![Checkpoints](https://img.shields.io/badge/Checkpoints-Google_Drive-4285F4?logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1OEXX2ZWsnoL0h4Bzf2sURBGJeneI-C3N?usp=sharing)
 [![Documentation](https://img.shields.io/badge/Docs-Getting_Started-176B63?logo=readthedocs&logoColor=white)](docs/getting_started.md)
 <br>
 [![Python](https://img.shields.io/badge/Python-3.9-3776AB?logo=python&logoColor=white)](environment.yml)
@@ -53,11 +52,11 @@ masked-attribute reconstruction with latent prediction: an online encoder
 represents visible Gaussian tokens, while an exponential-moving-average target
 encoder provides stop-gradient supervision for held-out spatial blocks.
 
-The released model uses all 14 Gaussian attributes, four non-overlapping target
+The reference model uses all 14 Gaussian attributes, four non-overlapping target
 blocks with heterogeneous spatial support, complementary latent projections,
 and feature-space grounding. The repository provides the pretraining
-implementation, a 300-epoch checkpoint, downstream transfer protocols, frozen
-representation diagnostics, shape completion, and part segmentation.
+implementation, downstream transfer protocols, frozen representation
+diagnostics, shape completion, and part segmentation.
 
 ## Method
 
@@ -122,13 +121,13 @@ export MODELNETGS_PLY_ROOT=/path/to/modelsplat_ply
 The ShapeNet55 and ModelNet split files used by the loaders are included under
 [`datasets/`](datasets/).
 
-## Released checkpoints
+## Checkpoints
 
-The [Gaussian-JEPA checkpoint folder](https://drive.google.com/drive/folders/1OEXX2ZWsnoL0h4Bzf2sURBGJeneI-C3N?usp=sharing)
-contains the canonical pretrained model and the principal classification,
-part-segmentation, and shape-completion checkpoints. For the commands below,
-download `pretrain/gaussian_jepa_shapenet55gs_1k_ep300.pth` and save it locally
-as `checkpoints/gaussian_jepa_ep300.pth`.
+Pretrained weights are not included in the current public release. The commands
+below use `checkpoints/gaussian_jepa_ep300.pth` as the local path for a
+compatible 300-epoch pretraining checkpoint. See
+[`CHECKPOINTS.md`](CHECKPOINTS.md) for the expected layout and state-dict
+structure.
 
 ```bash
 mkdir -p checkpoints
@@ -137,10 +136,8 @@ python tools/smoke_test_release.py \
   --checkpoint checkpoints/gaussian_jepa_ep300.pth
 ```
 
-The expected digest and checkpoint structure are documented in
-[`CHECKPOINTS.md`](CHECKPOINTS.md). The smoke test verifies CUDA extensions,
-strict checkpoint loading, finite pretraining losses, and one backward pass
-without requiring a dataset.
+The smoke test verifies CUDA extensions, strict checkpoint loading, finite
+pretraining losses, and one backward pass without requiring a dataset.
 
 ## Pretraining
 

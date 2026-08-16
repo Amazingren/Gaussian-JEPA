@@ -1,6 +1,6 @@
 # Release validation
 
-The public release was checked against the canonical 300-epoch checkpoint and
+The public code was checked against the reference 300-epoch checkpoint and
 a real ShapeSplats-format PLY asset. This page records the interface contract,
 not a new benchmark result.
 
@@ -16,11 +16,11 @@ not a new benchmark result.
 The following checks passed on an NVIDIA H200 NVL:
 
 1. CUDA grouping extensions imported successfully.
-2. The canonical checkpoint loaded into the release model.
+2. The reference checkpoint loaded into the public model implementation.
 3. A synthetic pretraining batch produced finite losses and completed one
    backward pass.
 4. A standard 14-attribute PLY with 15,613 Gaussians was normalized and sampled
-   to the released 1,024-Gaussian budget.
+   to the reference 1,024-Gaussian budget.
 5. Feature extraction produced 64 local tokens of 384 dimensions and a
    normalized 768-dimensional mean/max-pooled representation.
 
