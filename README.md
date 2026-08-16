@@ -40,7 +40,10 @@
 
 </div>
 
-![Gaussian-JEPA motivation and learning paradigms](./assets/gaussian_jepa_teaser.png)
+<p align="center">
+  <img src="./assets/gaussian_jepa_teaser.png" width="900"
+       alt="Gaussian-JEPA motivation and learning paradigms">
+</p>
 
 ## Overview
 
@@ -58,7 +61,10 @@ representation diagnostics, shape completion, and part segmentation.
 
 ## Method
 
-![Gaussian-JEPA framework](./assets/gaussian_jepa_framework.png)
+<p align="center">
+  <img src="./assets/gaussian_jepa_framework.png" width="900"
+       alt="Gaussian-JEPA framework">
+</p>
 
 A 1K-Gaussian observation is grouped into 64 local tokens. The target sampler
 selects four non-overlapping blocks of sizes `[11, 9, 7, 5]`; their complement
